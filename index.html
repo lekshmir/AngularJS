@@ -1,14 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Angular JS Sample Page</title>
+    <link rel="shortcut icon"  href="favicon.ico" />
 </head>
 <script src="angular.js"></script> 
-<script src="app.js"></script> 
-<body>
+<script src="app.js"></script>
+<script src="app_service.js"></script> 
+<script src="app.nameFilter.js"></script>
+<body >
+    <div ng-controller="MyCtrl">
+        {{myval}}
+        <input type="text" ng-model="myval">
+        <button ng-click="onClick()">Click Me</button>
+        <div ng-if="!myval">
+            No value for myval
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div ng-controller="MyCtrl1">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Seniority</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in students">
+                    <td>{{item.name | nameFilter:"hello"}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.seniority}}</td>
+                    <td><button ng-click="onViewDetailsClick(item)">View Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-show="selectedstu"> 
+            <h2>Student Details</h2>
+            <p>Name: {{selectedstu.name}}</p>
+            <p>Age:{{selectedstu.age}}</p>
+            <p>Seniority:{{selectedstu.seniority}}</p>
+        </div>
+    </div>
+    
 </body>
 
 </html>
