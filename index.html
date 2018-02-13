@@ -11,8 +11,11 @@
 <script src="app.js"></script>
 <script src="app_service.js"></script> 
 <script src="app.nameFilter.js"></script>
+<script src="app.component.js"></script>
 <body >
+        <student-details my-title="Hello World"></student-details>
     <div ng-controller="MyCtrl">
+            
         {{myval}}
         <input type="text" ng-model="myval">
         <button ng-click="onClick()">Click Me</button>
@@ -23,7 +26,10 @@
     <br/>
     <br/>
     <div ng-controller="MyCtrl1">
-        <table>
+            <student-details my-title="Hello Students" my-list="students"></student-details>
+            <br/>
+            <br/>
+            <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -41,13 +47,14 @@
                 </tr>
             </tbody>
         </table>
-
-        <div ng-show="selectedstu"> 
+        
+        <student-details my-title="Student Details" current-student="selectedstu"></student-details>
+        <!-- <div ng-show="selectedstu"> 
             <h2>Student Details</h2>
             <p>Name: {{selectedstu.name}}</p>
             <p>Age:{{selectedstu.age}}</p>
             <p>Seniority:{{selectedstu.seniority}}</p>
-        </div>
+        </div> -->
     </div>
     
 </body>
