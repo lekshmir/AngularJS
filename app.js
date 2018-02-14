@@ -5,12 +5,14 @@ function($stateProvider, $urlRouterProvider){
     $stateProvider.state({
         name: 'home',
         url: '/home',
-        template: '<div><h3>Home</h3><p>This is home page</p></div>'
+        component: 'home'
+        // template: '<div><h3>Home</h3><p>This is home page</p></div>'
     });
     $stateProvider.state({
         name: 'about',
         url: '/about',
-        template: '<div><h3>About</h3><p>This is about page</p></div>'
+        component: 'about'
+        // template: '<div><h3>About</h3><p>This is about page</p></div>'
     });
 }]);
 // Creating controller0
