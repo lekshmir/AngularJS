@@ -10,7 +10,7 @@ my_app.component('studentDetails', {
     },
    
     controller: ['$element', function($element){
-        console.log($element);
+        // console.log($element);
         this.myname = "new controller";
     }]
 });

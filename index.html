@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Angular JS Sample Page</title>
     <link rel="shortcut icon"  href="favicon.ico" />
+    <style>.active { color: red; font-weight: bolder; }</style>
 </head>
 <script src="angular.js"></script> 
+<script src="angular-ui-router.js"></script>
 <script src="app.js"></script>
 <script src="app_service.js"></script> 
 <script src="app.nameFilter.js"></script>
 <script src="app.component.js"></script>
 <body >
+    <a ui-sref="home" ui-sref-active="active">Home</a>
+    <a ui-sref="about" ui-sref-active="active">About</a>
+    <ui-view></ui-view>
         <student-details my-title="Hello World"></student-details>
     <div ng-controller="MyCtrl">
             
